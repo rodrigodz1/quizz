@@ -1,12 +1,14 @@
 import React, { useEffect, useRef } from "react";
 import { useField } from "@unform/core";
+import { FormInput } from "./style";
 
 interface InputProps {
   name: string;
   placeholder: string;
+  type: string;
 }
 
-const Input: React.FC<InputProps> = ({ name, placeholder, ...rest }) => {
+const Input: React.FC<InputProps> = ({ name, placeholder, type, ...rest }) => {
   const inputRef = useRef(null);
   const { fieldName, defaultValue, registerField } = useField(name);
 
@@ -27,10 +29,10 @@ const Input: React.FC<InputProps> = ({ name, placeholder, ...rest }) => {
   }, [fieldName, registerField]);
 
   return (
-    <input
+    <FormInput
       name={name}
       ref={inputRef}
-      type="text"
+      type={type}
       placeholder={placeholder}
       {...rest}
     />

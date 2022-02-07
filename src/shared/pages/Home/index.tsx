@@ -1,5 +1,6 @@
 import { Form } from "@unform/web";
 import React, { useRef } from "react";
+import { Button } from "../../components/Button";
 import { Input } from "../../components/Input";
 
 const Home: React.FC = () => {
@@ -11,13 +12,22 @@ const Home: React.FC = () => {
   return (
     <div>
       <Form ref={formRef} onSubmit={handleFormSubmit}>
-        <Input name="username" placeholder="Escolha um nome de usuário" />
-        <Input name="password" placeholder="Escolha uma senha forte" />
+        <Input
+          name="username"
+          placeholder="Escolha um nome de usuário"
+          type="text"
+        />
+        <Input
+          name="password"
+          placeholder="Escolha uma senha forte"
+          type="password"
+        />
         <Input
           name="passwordConfirmation"
           placeholder="Confirme sua senha forte"
+          type="password"
         />
-        <button type="submit">Save</button>
+        <Button type="submit">Confirmar</Button>
       </Form>
     </div>
   );
