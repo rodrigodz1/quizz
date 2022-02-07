@@ -19,8 +19,6 @@ export default createGlobalStyle`
     font-size: 16px;
   }
 
-  
-
   ul {
     list-style: none;
   }
